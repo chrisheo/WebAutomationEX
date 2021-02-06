@@ -1,16 +1,24 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.chrome.options import Options
 from openpyxl import Workbook
+#HeadLess 옵션 설정
+options = Options()
+options.add_argument("--headless")
+options.add_argument("window-size=1920,1080")
+
 #엑셀파일 생성
 wb = Workbook(write_only=True)
 ws = wb.create_sheet('코스타그램')
 ws.append(['이미지 주소','내용','해시태그','좋아요 수','댓글 수'])
 
-driver = webdriver.Chrome()
+#드라이버 가동
+driver = webdriver.Chrome(options=options)
 
 #사이트 접속
 driver.get('https://workey.codeit.kr/costagram/index')
