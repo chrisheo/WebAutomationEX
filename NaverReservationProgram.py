@@ -31,7 +31,7 @@ def clipboard_input(user_xpath, user_input):
 driver.find_element_by_css_selector("#gnb_login_button > span.gnb_txt").click()
 
 clipboard_input('//*[@id="id"]',"jftj")
-clipboard_input('//*[@id="pw"]',"qlalfqjsgh9709")
+clipboard_input('//*[@id="pw"]',"wowowowo")
 
 driver.find_element_by_xpath('//*[@id="log.login"]').click()
 
